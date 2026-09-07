@@ -8,8 +8,29 @@ final class AppState {
     var importing = false
     let judge = LocalJudge()
     private let modelStore = ModelStore()
+    private var didBootstrap = false
 
-    init() { reload() }
+    init() {}
+
+    /// Runs after the first SwiftUI frame. File and App Group work must not
+    /// happen in App.init: a failed entitlement or a slow container lookup
+    /// should never leave the launch screen looking like a frozen black view.
+    func bootstrap() {
+        guard !didBootstrap else { return }
+        didBootstrap = true
+        reload()
+        guard pack == nil else { return }
+        // Install the bundled starter pack only on a clean install. A user's
+        // imported package in the App Group always wins and is never replaced.
+        do {
+            let starter = try DictionaryPack(bundle: .main)
+            try SharedStore.save(starter)
+            pack = starter
+            message = "Демонстрационные словари установлены автоматически. Замените их своими данными во вкладке «Словари»."
+        } catch {
+            message = "Стартовый пакет не установлен: \(error.localizedDescription)"
+        }
+    }
     func reload() {
         do { pack = try SharedStore.loadPack() }
         catch { message = error.localizedDescription }

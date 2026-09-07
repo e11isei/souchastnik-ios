@@ -25,6 +25,8 @@ targets:
       - Sources/SouchastnikCore
       - path: iOS/Resources
         buildPhase: resources
+      - path: Data/StarterPack
+        buildPhase: resources
     dependencies:
       - target: SouchastnikKeyboard
         embed: true
