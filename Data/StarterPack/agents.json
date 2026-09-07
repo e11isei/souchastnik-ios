@@ -1,0 +1,23 @@
+{
+  "templates": {
+    "agent": "ДЕМО-МЕТКА: {NAME}",
+    "service": "ДЕМО-СЕРВИС: {NAME}"
+  },
+  "agents": [
+    {
+      "name": "Тестовый Автор",
+      "forms": ["Тестов"],
+      "exact": [],
+      "strict": true
+    }
+  ],
+  "services": [
+    {
+      "name": "Тестовый Сервис",
+      "kind": "service",
+      "forms": [],
+      "exact": ["тест-сервис"],
+      "strict": false
+    }
+  ]
+}
