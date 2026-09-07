@@ -76,6 +76,31 @@ public struct DictionaryPack: Codable, Sendable {
         try validate()
     }
 
+    /// Loads the bundled starter pack. The resource may be copied by Xcode
+    /// either as a `StarterPack` folder or at the bundle root, so both layouts
+    /// are accepted. This keeps first launch independent of App Group state.
+    public init(bundle: Bundle, subdirectory: String = "StarterPack") throws {
+        func read(_ name: String) throws -> Data {
+            let base = (name as NSString).deletingPathExtension
+            let ext = (name as NSString).pathExtension
+            let url = bundle.url(forResource: base, withExtension: ext, subdirectory: subdirectory)
+                ?? bundle.url(forResource: base, withExtension: ext)
+            guard let url else { throw PackError.invalid("В bundle отсутствует стартовый файл \(name)") }
+            let values = try url.resourceValues(forKeys: [.fileSizeKey, .isRegularFileKey])
+            guard values.isRegularFile == true, (values.fileSize ?? Int.max) <= 2_000_000 else {
+                throw PackError.invalid("\(name): ожидается файл до 2 МБ")
+            }
+            return try Data(contentsOf: url)
+        }
+        let decoder = JSONDecoder()
+        articles = try decoder.decode(ArticleFile.self, from: read("articles.json"))
+        triggers = try decoder.decode(TriggerFile.self, from: read("triggers.json"))
+        judgeTemplate = String(decoding: try read("judge.txt"), as: UTF8.self)
+        markers = (try? decoder.decode(MarkerFile.self, from: read("agents.json")))
+        examples = (try? decoder.decode(ExampleFile.self, from: read("examples.json")))
+        try validate()
+    }
+
     public func validate() throws {
         let codes = articles.articles.map(\.code)
         guard !codes.isEmpty, codes.count <= 1000, Set(codes).count == codes.count,

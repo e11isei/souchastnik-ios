@@ -17,12 +17,16 @@
 		2B3F4416CF218D090CD67D79 /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C482C259F7AD12E9BC6D149B /* Analysis.swift */; };
 		34809FA044F09AC24B7DB76B /* SouchastnikKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9E1C4CDC40C1272A03821C75 /* SouchastnikKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3C0C284D70074021397FF1D3 /* ModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4288071CFB7311377C608D0E /* ModelStore.swift */; };
+		43F30FAC4833A0A738BD9966 /* examples.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E0387CE049480DDFDF39816 /* examples.json */; };
 		56FD76141B06848AF0E8A743 /* llama-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942E71B6EE41CC35710DF1FE /* llama-LICENSE.txt */; };
 		57B0339D6417F736F27AC312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC3C8D0F37FF80982ED81422 /* Assets.xcassets */; };
+		60A4602536308A9F2BCA63B4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A905E03B5123BDB9E5CDBFE /* README.md */; };
 		6647B6EAEF60C5977F8F2B75 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7C4289C4BEDB79C4B499D3AE /* PrivacyInfo.xcprivacy */; };
+		67A6E0A4547A7CF4C8DA42A2 /* agents.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E626122A33C3674DEEA52D1 /* agents.json */; };
 		6DFA1BAB88245FC51A557D27 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F19C5C428A7E1813062F61 /* AppState.swift */; };
 		74A45BA49A9AA77271FE7DFC /* SouchastnikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA1A37DBD08F51907C34C9 /* SouchastnikApp.swift */; };
 		788021B058A57F77933B53BE /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C475DC180A255686288CC1 /* KeyboardViewController.swift */; };
+		92A6E581E37C9072AB4E306F /* judge.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2F8DE543E4661C64C5D88A1 /* judge.txt */; };
 		9B07D6F6EA00C6C5E354F384 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED2F017F1B62225DC72339 /* DictionaryView.swift */; };
 		9E7EFA9DD32B9284B183921A /* llama.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0323890495F15546D76AAC97 /* llama.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B16FD9CB1D5D2B815CB06E28 /* ConstrainedChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E9DC87CF79E568AE7661F /* ConstrainedChoice.swift */; };
@@ -30,7 +34,9 @@
 		B5BD10F9659592BA296824B4 /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78FAF2BECF0247F8C0D69D /* AnalyzeView.swift */; };
 		B9826E781CCFD08634D13069 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF3E81ADAF72F61F1E85E /* SharedStore.swift */; };
 		CB7D673AE278AC0FBD5D6475 /* llama.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0323890495F15546D76AAC97 /* llama.xcframework */; };
+		EFB10D4B6D2F88149688C6AB /* triggers.json in Resources */ = {isa = PBXBuildFile; fileRef = 4634758B714199E5EF894D72 /* triggers.json */; };
 		F9664BF95081896CA5ACFDA3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7C4289C4BEDB79C4B499D3AE /* PrivacyInfo.xcprivacy */; };
+		FCBA22E46C0D1A52B5258709 /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 23CB4F68191EB854FAA890D3 /* articles.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +77,12 @@
 /* Begin PBXFileReference section */
 		0323890495F15546D76AAC97 /* llama.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = llama.xcframework; path = Vendor/llama.xcframework; sourceTree = "<group>"; };
 		0CB53C1BDA104124BB259DE0 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		1A905E03B5123BDB9E5CDBFE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		23CB4F68191EB854FAA890D3 /* articles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
+		2E626122A33C3674DEEA52D1 /* agents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = agents.json; sourceTree = "<group>"; };
 		3CE861356ED5B0CC71BC7B26 /* Souchastnik.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Souchastnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4288071CFB7311377C608D0E /* ModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStore.swift; sourceTree = "<group>"; };
+		4634758B714199E5EF894D72 /* triggers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = triggers.json; sourceTree = "<group>"; };
 		5BED2F017F1B62225DC72339 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		5C9B4126C9E90FC79DE41FAB /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		65C475DC180A255686288CC1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -81,8 +91,10 @@
 		7C4289C4BEDB79C4B499D3AE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		807CFDD57CA69C4B880BAEE2 /* DictionaryPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPack.swift; sourceTree = "<group>"; };
 		813E9DC87CF79E568AE7661F /* ConstrainedChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrainedChoice.swift; sourceTree = "<group>"; };
+		8E0387CE049480DDFDF39816 /* examples.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = examples.json; sourceTree = "<group>"; };
 		942E71B6EE41CC35710DF1FE /* llama-LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "llama-LICENSE.txt"; sourceTree = "<group>"; };
 		9E1C4CDC40C1272A03821C75 /* SouchastnikKeyboard.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SouchastnikKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F8DE543E4661C64C5D88A1 /* judge.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = judge.txt; sourceTree = "<group>"; };
 		C482C259F7AD12E9BC6D149B /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
 		CC3C8D0F37FF80982ED81422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8F19C5C428A7E1813062F61 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -129,6 +141,20 @@
 			);
 			name = Resources;
 			path = iOS/Resources;
+			sourceTree = "<group>";
+		};
+		233FC1279823D147867789A9 /* StarterPack */ = {
+			isa = PBXGroup;
+			children = (
+				2E626122A33C3674DEEA52D1 /* agents.json */,
+				23CB4F68191EB854FAA890D3 /* articles.json */,
+				8E0387CE049480DDFDF39816 /* examples.json */,
+				B2F8DE543E4661C64C5D88A1 /* judge.txt */,
+				1A905E03B5123BDB9E5CDBFE /* README.md */,
+				4634758B714199E5EF894D72 /* triggers.json */,
+			);
+			name = StarterPack;
+			path = Data/StarterPack;
 			sourceTree = "<group>";
 		};
 		5EB79E2A8EBD1A10C0B5C665 /* Keyboard */ = {
@@ -183,6 +209,7 @@
 				1F7B661892A43217873F25B8 /* Resources */,
 				133FDB356BA2D93C0B6B2D22 /* Shared */,
 				F7C2ABABFE09869D3D469C91 /* SouchastnikCore */,
+				233FC1279823D147867789A9 /* StarterPack */,
 				0A0BA8FA889D08320F30E25D /* Frameworks */,
 				D137CB340674C892A5EF7234 /* Products */,
 			);
@@ -284,7 +311,13 @@
 				57B0339D6417F736F27AC312 /* Assets.xcassets in Resources */,
 				20789A5012D51416C92220D7 /* LICENSE.txt in Resources */,
 				F9664BF95081896CA5ACFDA3 /* PrivacyInfo.xcprivacy in Resources */,
+				60A4602536308A9F2BCA63B4 /* README.md in Resources */,
+				67A6E0A4547A7CF4C8DA42A2 /* agents.json in Resources */,
+				FCBA22E46C0D1A52B5258709 /* articles.json in Resources */,
+				43F30FAC4833A0A738BD9966 /* examples.json in Resources */,
+				92A6E581E37C9072AB4E306F /* judge.txt in Resources */,
 				56FD76141B06848AF0E8A743 /* llama-LICENSE.txt in Resources */,
+				EFB10D4B6D2F88149688C6AB /* triggers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
