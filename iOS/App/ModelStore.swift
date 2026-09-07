@@ -6,8 +6,30 @@ actor ModelStore {
     }
     static var installed: Bool { FileManager.default.fileExists(atPath: modelURL.path) }
 
+    /// Installs a model shipped in the application bundle on first launch.
+    /// The large GGUF is intentionally gitignored; release builds can include
+    /// it in Data/StarterPack without changing the installation flow.
+    func installBundledIfNeeded(from bundle: Bundle = .main) throws -> Bool {
+        guard !Self.installed else { return false }
+        let candidates = [
+            ("model", "gguf"),
+            ("souchastnik-qwen35-08b-q40", "gguf"),
+            ("libmodel-qwen35-08b-q40", "gguf"),
+            ("libmodel-qwen35-08b-q40", "so")
+        ]
+        guard let source = candidates.lazy.compactMap({ bundle.url(forResource: $0.0, withExtension: $0.1) }).first else {
+            return false
+        }
+        try install(source: source, securityScoped: false)
+        return true
+    }
+
     func importModel(from source: URL) throws {
-        let access = source.startAccessingSecurityScopedResource()
+        try install(source: source, securityScoped: true)
+    }
+
+    private func install(source: URL, securityScoped: Bool) throws {
+        let access = securityScoped && source.startAccessingSecurityScopedResource()
         defer { if access { source.stopAccessingSecurityScopedResource() } }
         let file = try FileHandle(forReadingFrom: source)
         defer { try? file.close() }

@@ -15,20 +15,31 @@ final class AppState {
     /// Runs after the first SwiftUI frame. File and App Group work must not
     /// happen in App.init: a failed entitlement or a slow container lookup
     /// should never leave the launch screen looking like a frozen black view.
-    func bootstrap() {
+    func bootstrap() async {
         guard !didBootstrap else { return }
         didBootstrap = true
         reload()
-        guard pack == nil else { return }
-        // Install the bundled starter pack only on a clean install. A user's
-        // imported package in the App Group always wins and is never replaced.
+        if pack == nil {
+            // Install the bundled starter pack only on a clean install. A
+            // user's imported package in the App Group always wins.
+            do {
+                let starter = try DictionaryPack(bundle: .main)
+                try SharedStore.save(starter)
+                pack = starter
+                message = "Демонстрационные словари установлены автоматически. Замените их своими данными во вкладке «Словари»."
+            } catch {
+                message = "Стартовый пакет не установлен: \(error.localizedDescription)"
+            }
+        }
         do {
-            let starter = try DictionaryPack(bundle: .main)
-            try SharedStore.save(starter)
-            pack = starter
-            message = "Демонстрационные словари установлены автоматически. Замените их своими данными во вкладке «Словари»."
+            if try await modelStore.installBundledIfNeeded() {
+                modelInstalled = true
+                message = "Локальная GGUF-модель установлена автоматически."
+            }
         } catch {
-            message = "Стартовый пакет не установлен: \(error.localizedDescription)"
+            // A malformed optional bundled model must not hide the UI or
+            // replace an already imported model.
+            if !modelInstalled { message = "Модель не установлена: \(error.localizedDescription)" }
         }
     }
     func reload() {

@@ -34,7 +34,7 @@ struct DictionaryView: View {
                 if state.modelInstalled {
                     Button("Удалить модель", role: .destructive) { confirmRemoval = true }
                 }
-                Text("Qwen3.5-0.8B в формате GGUF, исходная квантизация Q4_0. Можно импортировать и оригинальный файл libmodel-qwen35-08b-q40.so: внутри него GGUF. Веса не входят в приложение.")
+                Text("Если в сборку включён model.gguf или souchastnik-qwen35-08b-q40.gguf, приложение установит его автоматически при первом запуске. Иначе импортируйте GGUF вручную. Поддерживаются Qwen3.5-0.8B Q4_0 и оригинальное имя libmodel-qwen35-08b-q40.so, если внутри действительно GGUF.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             if state.importing {
