@@ -37,7 +37,7 @@ struct SetupView: View {
                 TextField("Нажмите сюда и выберите клавиатуру 🌐", text: $draft, axis: .vertical)
                     .lineLimit(3...6)
                     .accessibilityIdentifier("keyboard.tryField")
-                Text("Удерживайте «е» для «ё», «ь» для «ъ». Двойное нажатие Shift включает Caps Lock. Проведите по пробелу, чтобы переместить курсор.")
+                Text("Удерживайте «е» или «ь» и выберите «ё» или «ъ». Двойное нажатие Shift включает Caps Lock. Для перемещения курсора удерживайте пробел, затем двигайте палец. Двойной пробел ставит точку. Язык меняется через RU/EN над клавишами.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("Данные на устройстве") {
