@@ -28,6 +28,12 @@ actor ModelStore {
         try install(source: source, securityScoped: true)
     }
 
+    func installDownloadedModel(from source: URL) throws {
+        try Task.checkCancellation()
+        guard !Self.installed else { return }
+        try install(source: source, securityScoped: false)
+    }
+
     private func install(source: URL, securityScoped: Bool) throws {
         let access = securityScoped && source.startAccessingSecurityScopedResource()
         defer { if access { source.stopAccessingSecurityScopedResource() } }
@@ -42,14 +48,15 @@ actor ModelStore {
         let temporary = folder.appendingPathComponent(UUID().uuidString + ".gguf")
         defer { try? manager.removeItem(at: temporary) }
         try manager.copyItem(at: source, to: temporary)
+        try Task.checkCancellation()
         try manager.setAttributes([.protectionKey: FileProtectionType.completeUntilFirstUserAuthentication], ofItemAtPath: temporary.path)
+        var staged = temporary
+        var values = URLResourceValues()
+        values.isExcludedFromBackup = true
+        try staged.setResourceValues(values)
         if manager.fileExists(atPath: Self.modelURL.path) {
             _ = try manager.replaceItemAt(Self.modelURL, withItemAt: temporary)
         } else { try manager.moveItem(at: temporary, to: Self.modelURL) }
-        var url = Self.modelURL
-        var values = URLResourceValues()
-        values.isExcludedFromBackup = true
-        try url.setResourceValues(values)
     }
 
     func remove() throws {

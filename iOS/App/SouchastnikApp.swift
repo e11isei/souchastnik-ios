@@ -17,10 +17,13 @@ struct SouchastnikApp: App {
             }
             .tint(.indigo)
             .environment(state)
-            .task { await state.bootstrap() }
+            .task { state.bootstrap() }
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { Task { await state.bootstrap(); state.reload() } }
-                else { Task { await state.judge.unload() } }
+                if phase == .active { state.resumeDownloads() }
+                else if phase == .background {
+                    state.pauseDownloads()
+                    Task { await state.judge.unload() }
+                }
             }
             .alert("Соучастник", isPresented: Binding(get: { state.message != nil }, set: { if !$0 { state.message = nil } })) {
                 Button("Понятно", role: .cancel) { state.message = nil }
