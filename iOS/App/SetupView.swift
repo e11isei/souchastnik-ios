@@ -18,6 +18,7 @@ struct SetupView: View {
                         .foregroundStyle(.secondary)
                 }.padding(.vertical, 12)
             }
+            AssetDownloadView()
             Section("Подключение") {
                 Label("Откройте Настройки → Основные → Клавиатура → Клавиатуры.", systemImage: "1.circle")
                 Label("Выберите «Новые клавиатуры» → «Соучастник».", systemImage: "2.circle")
@@ -42,7 +43,7 @@ struct SetupView: View {
             Section("Данные на устройстве") {
                 Label(state.pack == nil ? "Словари не установлены" : "Словари установлены", systemImage: state.pack == nil ? "tray" : "checkmark.circle")
                 Label(state.modelInstalled ? "Модель импортирована" : "Модель не установлена", systemImage: "cpu")
-                Text("Оригинальные словари, промпт и веса модели не опубликованы в исходном репозитории. Импортируйте их на вкладке «Словари», когда они будут доступны.")
+                Text("Словари скачиваются из репозитория проекта, модель Qwen3.5 — с Hugging Face. Установка начинается при первом входе. Это стандартная модель, без дообучения автора оригинального проекта.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("О проекте") {
