@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		08E487E5E421DBF06DCE8178 /* DictionaryPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807CFDD57CA69C4B880BAEE2 /* DictionaryPack.swift */; };
 		0A879955BD2C8D4CF29A2121 /* ConstrainedChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E9DC87CF79E568AE7661F /* ConstrainedChoice.swift */; };
+		0CF6F9B84FEEBA36D1033C86 /* AssetDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABAA8CEBC75383A52C0FB9 /* AssetDownloadView.swift */; };
+		11B30B2FFE859E17C1C74DB7 /* KeyboardTyping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0015745865020EE989326B2 /* KeyboardTyping.swift */; };
 		1878A733C78D637555026F19 /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C482C259F7AD12E9BC6D149B /* Analysis.swift */; };
 		20789A5012D51416C92220D7 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C9B4126C9E90FC79DE41FAB /* LICENSE.txt */; };
 		2499FB67056ED66F1B6282F1 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB53C1BDA104124BB259DE0 /* SetupView.swift */; };
@@ -17,6 +19,7 @@
 		2B3F4416CF218D090CD67D79 /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C482C259F7AD12E9BC6D149B /* Analysis.swift */; };
 		34809FA044F09AC24B7DB76B /* SouchastnikKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9E1C4CDC40C1272A03821C75 /* SouchastnikKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3C0C284D70074021397FF1D3 /* ModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4288071CFB7311377C608D0E /* ModelStore.swift */; };
+		3CE8244AAAEBB1D030BB6E02 /* HTTPAssetDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103EF073CA1731A332CD261 /* HTTPAssetDownloader.swift */; };
 		43F30FAC4833A0A738BD9966 /* examples.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E0387CE049480DDFDF39816 /* examples.json */; };
 		56FD76141B06848AF0E8A743 /* llama-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 942E71B6EE41CC35710DF1FE /* llama-LICENSE.txt */; };
 		57B0339D6417F736F27AC312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC3C8D0F37FF80982ED81422 /* Assets.xcassets */; };
@@ -26,14 +29,19 @@
 		6DFA1BAB88245FC51A557D27 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F19C5C428A7E1813062F61 /* AppState.swift */; };
 		74A45BA49A9AA77271FE7DFC /* SouchastnikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA1A37DBD08F51907C34C9 /* SouchastnikApp.swift */; };
 		788021B058A57F77933B53BE /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C475DC180A255686288CC1 /* KeyboardViewController.swift */; };
+		7E46CFDF432AFE890713A379 /* KeyboardTyping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0015745865020EE989326B2 /* KeyboardTyping.swift */; };
+		817A62E126EA3875CB825232 /* AssetSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D1E3D051E2A7110B08546 /* AssetSources.swift */; };
 		92A6E581E37C9072AB4E306F /* judge.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2F8DE543E4661C64C5D88A1 /* judge.txt */; };
 		9B07D6F6EA00C6C5E354F384 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED2F017F1B62225DC72339 /* DictionaryView.swift */; };
 		9E7EFA9DD32B9284B183921A /* llama.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0323890495F15546D76AAC97 /* llama.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7642BF7F54A522B8FF76E59 /* KeyboardSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12299CEB0A28D7FE7026D674 /* KeyboardSurface.swift */; };
+		AF9DD16921571376DD353218 /* RemoteAssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA9E7BCD806C72346E88994 /* RemoteAssetService.swift */; };
 		B16FD9CB1D5D2B815CB06E28 /* ConstrainedChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813E9DC87CF79E568AE7661F /* ConstrainedChoice.swift */; };
 		B4CA67BFC5DA258306057468 /* LocalJudge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2282CA672B3DB99BF09E90 /* LocalJudge.swift */; };
 		B5BD10F9659592BA296824B4 /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78FAF2BECF0247F8C0D69D /* AnalyzeView.swift */; };
 		B9826E781CCFD08634D13069 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AF3E81ADAF72F61F1E85E /* SharedStore.swift */; };
 		CB7D673AE278AC0FBD5D6475 /* llama.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0323890495F15546D76AAC97 /* llama.xcframework */; };
+		E593DFF0374ADEB3C1FF1949 /* KeyboardKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBF7A5CA6AF359CCE46788E /* KeyboardKeyView.swift */; };
 		EFB10D4B6D2F88149688C6AB /* triggers.json in Resources */ = {isa = PBXBuildFile; fileRef = 4634758B714199E5EF894D72 /* triggers.json */; };
 		F9664BF95081896CA5ACFDA3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7C4289C4BEDB79C4B499D3AE /* PrivacyInfo.xcprivacy */; };
 		FCBA22E46C0D1A52B5258709 /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 23CB4F68191EB854FAA890D3 /* articles.json */; };
@@ -77,6 +85,7 @@
 /* Begin PBXFileReference section */
 		0323890495F15546D76AAC97 /* llama.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = llama.xcframework; path = Vendor/llama.xcframework; sourceTree = "<group>"; };
 		0CB53C1BDA104124BB259DE0 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		12299CEB0A28D7FE7026D674 /* KeyboardSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSurface.swift; sourceTree = "<group>"; };
 		1A905E03B5123BDB9E5CDBFE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		23CB4F68191EB854FAA890D3 /* articles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
 		2E626122A33C3674DEEA52D1 /* agents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = agents.json; sourceTree = "<group>"; };
@@ -92,14 +101,20 @@
 		807CFDD57CA69C4B880BAEE2 /* DictionaryPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPack.swift; sourceTree = "<group>"; };
 		813E9DC87CF79E568AE7661F /* ConstrainedChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrainedChoice.swift; sourceTree = "<group>"; };
 		8E0387CE049480DDFDF39816 /* examples.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = examples.json; sourceTree = "<group>"; };
+		9103EF073CA1731A332CD261 /* HTTPAssetDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAssetDownloader.swift; sourceTree = "<group>"; };
 		942E71B6EE41CC35710DF1FE /* llama-LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "llama-LICENSE.txt"; sourceTree = "<group>"; };
+		9B3D1E3D051E2A7110B08546 /* AssetSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSources.swift; sourceTree = "<group>"; };
 		9E1C4CDC40C1272A03821C75 /* SouchastnikKeyboard.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SouchastnikKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F8DE543E4661C64C5D88A1 /* judge.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = judge.txt; sourceTree = "<group>"; };
+		BDBF7A5CA6AF359CCE46788E /* KeyboardKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKeyView.swift; sourceTree = "<group>"; };
 		C482C259F7AD12E9BC6D149B /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
 		CC3C8D0F37FF80982ED81422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8F19C5C428A7E1813062F61 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DEABAA8CEBC75383A52C0FB9 /* AssetDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDownloadView.swift; sourceTree = "<group>"; };
 		DF78FAF2BECF0247F8C0D69D /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
+		E0015745865020EE989326B2 /* KeyboardTyping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTyping.swift; sourceTree = "<group>"; };
 		E69AF3E81ADAF72F61F1E85E /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		FCA9E7BCD806C72346E88994 /* RemoteAssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAssetService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +172,22 @@
 			path = Data/StarterPack;
 			sourceTree = "<group>";
 		};
+		31E5D068FFDFBB887219CC7B /* SouchastnikAssets */ = {
+			isa = PBXGroup;
+			children = (
+				9B3D1E3D051E2A7110B08546 /* AssetSources.swift */,
+				9103EF073CA1731A332CD261 /* HTTPAssetDownloader.swift */,
+				FCA9E7BCD806C72346E88994 /* RemoteAssetService.swift */,
+			);
+			name = SouchastnikAssets;
+			path = Sources/SouchastnikAssets;
+			sourceTree = "<group>";
+		};
 		5EB79E2A8EBD1A10C0B5C665 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				BDBF7A5CA6AF359CCE46788E /* KeyboardKeyView.swift */,
+				12299CEB0A28D7FE7026D674 /* KeyboardSurface.swift */,
 				65C475DC180A255686288CC1 /* KeyboardViewController.swift */,
 			);
 			name = Keyboard;
@@ -171,6 +199,7 @@
 			children = (
 				DF78FAF2BECF0247F8C0D69D /* AnalyzeView.swift */,
 				D8F19C5C428A7E1813062F61 /* AppState.swift */,
+				DEABAA8CEBC75383A52C0FB9 /* AssetDownloadView.swift */,
 				5BED2F017F1B62225DC72339 /* DictionaryView.swift */,
 				7C2282CA672B3DB99BF09E90 /* LocalJudge.swift */,
 				4288071CFB7311377C608D0E /* ModelStore.swift */,
@@ -196,6 +225,7 @@
 				C482C259F7AD12E9BC6D149B /* Analysis.swift */,
 				813E9DC87CF79E568AE7661F /* ConstrainedChoice.swift */,
 				807CFDD57CA69C4B880BAEE2 /* DictionaryPack.swift */,
+				E0015745865020EE989326B2 /* KeyboardTyping.swift */,
 			);
 			name = SouchastnikCore;
 			path = Sources/SouchastnikCore;
@@ -208,6 +238,7 @@
 				5EB79E2A8EBD1A10C0B5C665 /* Keyboard */,
 				1F7B661892A43217873F25B8 /* Resources */,
 				133FDB356BA2D93C0B6B2D22 /* Shared */,
+				31E5D068FFDFBB887219CC7B /* SouchastnikAssets */,
 				F7C2ABABFE09869D3D469C91 /* SouchastnikCore */,
 				233FC1279823D147867789A9 /* StarterPack */,
 				0A0BA8FA889D08320F30E25D /* Frameworks */,
@@ -331,6 +362,9 @@
 				2B3F4416CF218D090CD67D79 /* Analysis.swift in Sources */,
 				0A879955BD2C8D4CF29A2121 /* ConstrainedChoice.swift in Sources */,
 				08E487E5E421DBF06DCE8178 /* DictionaryPack.swift in Sources */,
+				E593DFF0374ADEB3C1FF1949 /* KeyboardKeyView.swift in Sources */,
+				A7642BF7F54A522B8FF76E59 /* KeyboardSurface.swift in Sources */,
+				7E46CFDF432AFE890713A379 /* KeyboardTyping.swift in Sources */,
 				788021B058A57F77933B53BE /* KeyboardViewController.swift in Sources */,
 				278F17951DE51AF8B90348AF /* SharedStore.swift in Sources */,
 			);
@@ -343,11 +377,16 @@
 				1878A733C78D637555026F19 /* Analysis.swift in Sources */,
 				B5BD10F9659592BA296824B4 /* AnalyzeView.swift in Sources */,
 				6DFA1BAB88245FC51A557D27 /* AppState.swift in Sources */,
+				0CF6F9B84FEEBA36D1033C86 /* AssetDownloadView.swift in Sources */,
+				817A62E126EA3875CB825232 /* AssetSources.swift in Sources */,
 				B16FD9CB1D5D2B815CB06E28 /* ConstrainedChoice.swift in Sources */,
 				26DE5A91F4902398FFA44B31 /* DictionaryPack.swift in Sources */,
 				9B07D6F6EA00C6C5E354F384 /* DictionaryView.swift in Sources */,
+				3CE8244AAAEBB1D030BB6E02 /* HTTPAssetDownloader.swift in Sources */,
+				11B30B2FFE859E17C1C74DB7 /* KeyboardTyping.swift in Sources */,
 				B4CA67BFC5DA258306057468 /* LocalJudge.swift in Sources */,
 				3C0C284D70074021397FF1D3 /* ModelStore.swift in Sources */,
+				AF9DD16921571376DD353218 /* RemoteAssetService.swift in Sources */,
 				2499FB67056ED66F1B6282F1 /* SetupView.swift in Sources */,
 				B9826E781CCFD08634D13069 /* SharedStore.swift in Sources */,
 				74A45BA49A9AA77271FE7DFC /* SouchastnikApp.swift in Sources */,

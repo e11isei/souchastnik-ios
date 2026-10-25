@@ -23,6 +23,7 @@ targets:
       - iOS/App
       - iOS/Shared
       - Sources/SouchastnikCore
+      - Sources/SouchastnikAssets
       - path: iOS/Resources
         buildPhase: resources
       - path: Data/StarterPack

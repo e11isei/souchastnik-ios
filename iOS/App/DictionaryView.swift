@@ -16,6 +16,7 @@ struct DictionaryView: View {
 
     var body: some View {
         List {
+            AssetDownloadView()
             Section("Пакет словарей") {
                 if let pack = state.pack {
                     LabeledContent("Статей", value: "\(pack.articles.articles.count)")
@@ -24,18 +25,25 @@ struct DictionaryView: View {
                 } else {
                     ContentUnavailableView("Словари не установлены", systemImage: "books.vertical", description: Text("Оригинальные данные отсутствуют в публичном репозитории. Приложение не подставляет выдуманный справочник."))
                 }
+                Button("Обновить словари из репозитория", systemImage: "arrow.clockwise") {
+                    state.downloadDictionary(useRepository: true)
+                }.disabled(state.isBusy)
+                Link("Источник словарей", destination: AssetSources.repository)
                 Button("Импортировать папку словарей", systemImage: "folder.badge.plus") { importFolder = true }
+                    .disabled(state.isBusy)
                 Text("Обязательно: articles.json, triggers.json, judge.txt. Необязательно: agents.json и examples.json. Форматы совместимы с исходным проектом.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("Локальная модель") {
                 Label(state.modelInstalled ? "GGUF-файл установлен" : "Модель не установлена", systemImage: "cpu")
                 Button("Импортировать GGUF-файл", systemImage: "square.and.arrow.down") { importModel = true }
+                    .disabled(state.isBusy)
                 if state.modelInstalled {
-                    Button("Удалить модель", role: .destructive) { confirmRemoval = true }
+                    Button("Удалить модель", role: .destructive) { confirmRemoval = true }.disabled(state.isBusy)
                 }
-                Text("Если в сборку включён model.gguf или souchastnik-qwen35-08b-q40.gguf, приложение установит его автоматически при первом запуске. Иначе импортируйте GGUF вручную. Поддерживаются Qwen3.5-0.8B Q4_0 и оригинальное имя libmodel-qwen35-08b-q40.so, если внутри действительно GGUF.")
+                Text("Qwen3.5-0.8B Q4_0 скачивается автоматически с Hugging Face, около 563 МБ. Перед установкой проверяются размер файла и SHA-256. Готовая модель используется повторно без скачивания.")
                     .font(.footnote).foregroundStyle(.secondary)
+                Link("Источник модели · Apache 2.0", destination: AssetSources.modelPage)
             }
             if state.importing {
                 Section { ProgressView("Импорт данных…") }
@@ -52,7 +60,6 @@ struct DictionaryView: View {
                 }
             }
         }
-        .disabled(state.importing)
         .navigationTitle("Словари и ИИ")
         .searchable(text: $query, prompt: "Код или название статьи")
         .fileImporter(isPresented: $importFolder, allowedContentTypes: [.folder]) { result in
@@ -67,7 +74,7 @@ struct DictionaryView: View {
             case .failure(let error): state.message = error.localizedDescription
             }
         }
-        .confirmationDialog("Удалить локальную модель? Для следующего разбора потребуется повторный импорт.", isPresented: $confirmRemoval, titleVisibility: .visible) {
+        .confirmationDialog("Удалить локальную модель? Автозагрузка отключится до нажатия «Скачать модель».", isPresented: $confirmRemoval, titleVisibility: .visible) {
             Button("Удалить модель", role: .destructive) { Task { await state.removeModel() } }
         }
     }

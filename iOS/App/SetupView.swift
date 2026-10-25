@@ -18,6 +18,7 @@ struct SetupView: View {
                         .foregroundStyle(.secondary)
                 }.padding(.vertical, 12)
             }
+            AssetDownloadView()
             Section("Подключение") {
                 Label("Откройте Настройки → Основные → Клавиатура → Клавиатуры.", systemImage: "1.circle")
                 Label("Выберите «Новые клавиатуры» → «Соучастник».", systemImage: "2.circle")
@@ -36,13 +37,13 @@ struct SetupView: View {
                 TextField("Нажмите сюда и выберите клавиатуру 🌐", text: $draft, axis: .vertical)
                     .lineLimit(3...6)
                     .accessibilityIdentifier("keyboard.tryField")
-                Text("Удерживайте «е» для «ё», «ь» для «ъ». Двойное нажатие Shift включает Caps Lock. Проведите по пробелу, чтобы переместить курсор.")
+                Text("Удерживайте «е» или «ь» и выберите «ё» или «ъ». Двойное нажатие Shift включает Caps Lock. Для перемещения курсора удерживайте пробел, затем двигайте палец. Двойной пробел ставит точку. Язык меняется через RU/EN над клавишами.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("Данные на устройстве") {
                 Label(state.pack == nil ? "Словари не установлены" : "Словари установлены", systemImage: state.pack == nil ? "tray" : "checkmark.circle")
                 Label(state.modelInstalled ? "Модель импортирована" : "Модель не установлена", systemImage: "cpu")
-                Text("Оригинальные словари, промпт и веса модели не опубликованы в исходном репозитории. Импортируйте их на вкладке «Словари», когда они будут доступны.")
+                Text("Словари скачиваются из репозитория проекта, модель Qwen3.5 — с Hugging Face. Установка начинается при первом входе. Это стандартная модель, без дообучения автора оригинального проекта.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
             Section("О проекте") {
